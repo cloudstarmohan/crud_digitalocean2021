@@ -5,8 +5,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
+$page = $_GET['page'];
 
-$sql = "SELECT * FROM user";
+$sql = "SELECT * FROM user limit 10";
 $result = $conn->query($sql);
 
 $finalData = array();
